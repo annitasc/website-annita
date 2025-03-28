@@ -20,7 +20,15 @@
         font-family: 'Cooper Black', sans-serif;
         font-size: 20px;
         border-radius: 10px;
+        width: 100%; /* Pastikan lebar marquee penuh */
+        display: block; /* Hindari batasan inline */
     }
+
+
+    html {
+        scroll-padding-top: 80px; 
+    }
+
     h1{
         font-family: cooper black ;
         color : #6f0091;
@@ -44,38 +52,9 @@
         margin: 5px; 
     }
 
-    ol {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-    }
-
-    ol li {
-            display: inline;
-            margin: 0 15px;
-    }
-
-    ol li a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #702963;
-            transition: 0.3s;
-    }
-
-    ol li a:hover {
-            color: #FF69B4;
-            text-decoration: underline;
-    }
-
-    img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 10%;
-            box-shadow: 0px 0px 10px #702963;
-    }
 
     table {
-            width: 70%;
+            width: 90%;
             margin: 20px auto;
             border-collapse: separate;
             border-radius: 20px;
@@ -95,11 +74,16 @@
             background: #f5ccfff5;
     }
 
+    hr {
+        width: 100%; 
+        margin: 20px auto;
+    }
+
     iframe {
         display: block;
         margin: auto;
         border-radius: 15px; 
-        width: 80%;
+        width: 70%;
         max-width: 600px;
         height: 400px;
         border: 0;
@@ -107,38 +91,134 @@
         margin-left: 20px;
     }
 
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: purple;
+        color: white;
+        padding: 15px;
+        font-family: 'Cooper Black', sans-serif;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        padding-right: 20px;
+    }
+
+    .navbar ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .navbar ul li a:hover {
+        color: #ff77df;
+        text-decoration: underline;
+    }
+
+    .content {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .intro-container {
+        background: #f5ccfff5;
+        border-radius: 20px;
+        box-shadow: 0px 0px 15px rgba(112, 41, 99, 0.3);
+        width: 800px;
+        height: 500px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .intro-container img {
+        max-height: 100%;
+        max-width: 50%; 
+        object-fit: contain;
+        
+    }
+
+    .intro-text {
+        flex: 1;
+        margin-right: 50px;
+    }
+
+    .current-container {
+        background-color: #f5ccfff5;
+        padding: 20px; 
+        margin: 20px auto; 
+        border-radius: 15px; 
+        box-shadow: 0px 0px 15px rgba(112, 41, 99, 0.3);
+        max-width: 85%; 
+        text-align: left; 
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center; 
+        gap: 5px; 
+        margin-top: 20px;
+    }
+
+    .social-links a img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; 
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .social-links a img:hover {
+        transform: scale(1.2); 
+        box-shadow: 0 0 15px rgba(128, 0, 128, 0.7); 
+    }
+
+
 </style>
 </head>
 <body>
         <font face="century schoolbook">
-            <marquee direction="left">
-                WELCOME TO MY PAGE 😻
-            </marquee>
-
-        <ol type ="square">
-            <li><a href="#Summary">Profile</a></li>
-            <li><a href="#edu">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#current">Currently</a></li>
-            <li><a href="#skill">Skills</a></li>
-            <li><a target = "_blank" href="https://drive.google.com/file/d/1whbNlb2dKolMEmIf2d-P6S3d51JiEXn0/view?usp=drive_link">
-                Portfolio</a></li>
-        </ol>
-
-        <h1>Hi, I'm Annita Puspita suci</h1>
-
-        <center>
-        <img src = "annita.jpg" width="300" alt="Annita" style="border-radius: 25%;">
-        </center>
+            <div class="navbar">
+                <span>Welcome to My Page</span>
+                <ul>
+                    <li><a href="#Summary">Profile</a></li>
+                    <li><a href="#edu">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#current">Currently</a></li>
+                    <li><a target="_blank" href="https://drive.google.com/file/d/1whbNlb2dKolMEmIf2d-P6S3d51JiEXn0/view?usp=drive_link">Portfolio</a></li>
+                </ul>
+            </div>
         
-        <div class ="intro">
-            <h2 = id="Summary">Let's get to know me more!</h3>
-            <p>I am an enthusiastic undergraduate student at the University of Brawijaya, majoring in Information Systems. My academic focus combines a strong foundation in computer science and management, enabling me to bridge the gap between technical proficiency and business strategy. I'm still a beginner in this field, but i have great enthusiasm here🤓. So i always learn and try to improve my abilities🚀</p>
-        </div>
-
-        <hr border = "3" color = "purple">
-
-        <div class="container">
+            <div class="content">
+                <div class="intro-container">
+                    <img src="profil.png" alt="Annita">
+                    <div class="intro-text">
+                        <h1>Hi, I'm Annita Puspita Suci</h1>
+                        <h2 id="Summary">Let's get to know me more!</h2>
+                        <p>I am an enthusiastic undergraduate student at the University of Brawijaya, majoring in Information Systems. My academic focus combines a strong foundation in computer science and management, enabling me to bridge the gap between technical proficiency and business strategy.</p>
+                        <p><em>I'm still a beginner in this field, but I have great enthusiasm here🤓. So I always learn and try to improve my abilities🚀</em></p>
+                    </div>
+                </div>
+            </div>
+            <br>
             <div class="education">
                 <h2 id = "edu">Education History</h2>
                 <table border="1"  style="border-color: purple; border-collapse: collapse;">
@@ -148,7 +228,7 @@
                     </tr>
                     <tr>
                         <td><strong>University of Brawijaya</strong> <em> (Information Systems)</em></td>
-                        <td>August 2024 - now</td>
+                        <td>August 2024 - present</td>
                         
                     </tr>
                     <tr>
@@ -217,23 +297,22 @@
             </div>
         </div>
 
-        <hr border = "3" color = "purple">
+        <br>
 
-        <h2 id="current">Currently</h2>
-        <ul>
-            <li>🎨 Interested in UI/UX Design & Frontend Development</li>
-            <li>💻 Learning HTML, CSS, JavaScript, Java</li>
-            <li>📜My favorite motivation : <q>Whatever happens get trough it! I'ts okay to not be okay</q></li>
-            
-            
-        </ul>
-        <ul><b>👩‍💻My Hobbies :</b>
-            <li>listening to music</li>
-            <li>watching drama</li>
-        </ul>
-
-        <hr border = "3" color = "purple">
-        <h3 id="contact">Contact me</h3>
+        <div class="current-container">
+            <h2 id="current">Currently</h2>
+            <ul>
+                <li>🎨 Interested in UI/UX Design & Frontend Development</li>
+                <li>💻 Learning HTML, CSS, JavaScript, Java</li>
+                <li>📜My favorite motivation : <q>Whatever happens, get through it! It's okay to not be okay</q></li>
+            </ul>
+            <ul><b>👩‍💻My Hobbies :</b>
+                <li>Listening to music</li>
+                <li>Watching drama</li>
+            </ul>
+        </div>
+        
+        <h2 id="contact">Contact me</h2>
         <div class = "social-links">
             <a href="https://linkedin.com/in/annita-puspita-suci" target="_blank">
                 <img src="linkedin.png" width="50" alt="LinkedIn">
@@ -251,15 +330,16 @@
         
         <hr border = "3" color = "purple">
 
-        <h3>Address</h3>
+        <h2>Address</h2>
+        <br>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.4311746798767!2d112.61011610000003!3d-7.954315299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7883415dce0921%3A0x7bb72377612686a5!2sKOS%20PUTRI%20MURAH%202%20DEKAT%20UB%20MALANG%20(%20KOS%20PUTRI%20NYATA%202%20DEKAT%20UB%20MALANG)!5e0!3m2!1sid!2sid!4v1739856568487!5m2!1sid!2sid" ></iframe>
 
         <center>
-            <h5  style="color: purple" > © annita</h5>
-            <marquee direction="left" style="background-color: purple; color: white; padding: 10px; font-family: cooper;">
-                THANKYOU FOR VISITING MY PAGE 😻
-            </marquee>
+            <h5 style="color: purple" > © annita</h5>
         </center>
+        <marquee direction="left" >
+            THANKYOU FOR VISITING MY PAGE 😻
+        </marquee>
 
         </font>
 
